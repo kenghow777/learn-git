@@ -28,9 +28,13 @@
     #fdf2e9
     #fae5d3
     #eb984e
-  - Shades: #cf711f
+  - Shades: 
+    #cf711f
+    #45260a
   - Accents:
   - Greys:
+  #888
+  #767676 (lightest gray allowed on #fff)
   #6f6f6f (lightest gray allowed on #fdf2e9)
   #555
   #333
@@ -92,6 +96,9 @@ body{
 .grid--4-cols{
   grid-template-columns: repeat(4,1fr);
 }
+.grid--5-cols{
+  grid-template-columns: repeat(5,1fr);
+}
 .grid--center-v{
   align-items: center;
 }
@@ -129,13 +136,19 @@ body{
   margin-bottom: 1.6rem;
   letter-spacing: 0.75px;
 }
-.btn:link, .btn:visited{
+
+.btn,.btn:link, .btn:visited{
   display: inline-block;
   text-decoration: none;
   font-size: 2rem;
   font-weight: 600;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
+
+  /* only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 
   /* Put transition on original "start" */
   /* transition: background-color 0.3s ; */
@@ -161,6 +174,16 @@ body{
 
   /* Trick to add border inside */
   box-shadow: inset 0 0 0 3px #fff;
+}
+.btn--form{
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: flex-end;
+  padding: 1.2rem;
+}
+.btn--form:hover{
+  background-color: #fff;
+  color: #555;
 }
 .link:link,
 .link:visited{
@@ -191,6 +214,13 @@ body{
 .list-icon{
   width: 3rem;height: 3rem;
   color: #e67e22;
+}
+
+*:focus{
+  outline: none;
+  /* outline: 4px dotted #e67e22; */
+  /* outline-offset: 8px; */
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5)
 }
 
 /* HELPER/SETTINGS CLASSES */
